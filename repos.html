@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>GitHubリポジトリ一覧 - KaziKi</title>
+  <title>適当なリポジトリ一覧 - midonatori</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -18,7 +18,8 @@
       <button id="darkModeToggle">ダークモード切替</button>
     </div>
     <div class="sidebar-content">
-      <p><a href="https://github.com/Kazi-Ki" target="_blank" rel="noopener">GitHubページ</a></p>
+      <p><a href="https://github.com/Midonatori" target="_blank" rel="noopener">GitHubページ</a></p>
+      <p><a href="https://github.com/KaziKi-JP" target="_blank" rel="noopener">製作者</a></p>
       <p><a href="index.html">トップページ</a></p>
     </div>
   </aside>
@@ -32,7 +33,7 @@
     async function fetchRepos() {
       const container = document.getElementById("repo-list");
       try {
-        const res = await fetch("https://api.github.com/users/Kazi-Ki/repos");
+        const res = await fetch("https://api.github.com/users/midonatori/repos");
         if (!res.ok) throw new Error("API取得失敗");
         const repos = await res.json();
 
@@ -58,7 +59,7 @@
 
           // GitHub Pages URLは通常 https://ユーザ名.github.io/リポジトリ名/
           // ただし repo.name === username.github.io の場合はトップページなのでURLは https://ユーザ名.github.io/
-          const username = "Kazi-Ki";
+          const username = "midonatori";
           let pagesUrl = `https://${username}.github.io/${repo.name}/`;
           if (repo.name.toLowerCase() === `${username.toLowerCase()}.github.io`) {
             pagesUrl = `https://${username}.github.io/`;
